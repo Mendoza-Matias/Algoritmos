@@ -13,6 +13,17 @@ public class Main {
             System.out.println("*".repeat(i));
         }
         
+        System.out.println("Ingresa un numero");
+        int N = sctr.nextInt();
+        String linea = "";
+        for(int i = 0 ; i < N ; i++ ){
+            if(i % 2 != 0){
+                linea = linea + String.valueOf(i);
+                System.out.println(linea);
+            }
+        }
+
+        
 
     }
 }
