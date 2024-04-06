@@ -90,7 +90,7 @@ for indice in range(1,fourt_number+1): #Si mi fourt_number = 6 indice = 6
         print(str(column),end=" ")
     print("")
 
-
+#Otra forma de hacer lo mismo
 N = 5
 linea = ''
 
@@ -149,4 +149,4 @@ while count <= resultado : # count = 0  = resultado = 0
     resultado = resultado // 10
     print("resultado = "+str(resultado) + " resto = " + str(resultado % 10))
     count+= 1
-    
+    #
