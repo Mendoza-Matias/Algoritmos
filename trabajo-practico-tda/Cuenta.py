@@ -2,9 +2,9 @@ from Validar import validar_tipo
 
 class Cuenta:
     def __init__(self,numero_de_cuenta:int,dni:int,saldo_cuenta:int,interes_anual:int) -> None:
-        self.__numero_de_cuenta = self.validar_numero_cuenta(numero_de_cuenta)
-        self.__dni = self.validar_dni(dni)
-        self.__saldo_cuenta = self.validar_saldo(saldo_cuenta)
+        self.__numero_de_cuenta = validar_numero_cuenta(numero_de_cuenta)
+        self.__dni = validar_dni(dni)
+        self.__saldo_cuenta = validar_saldo(saldo_cuenta)
         self.__interes_anual = interes_anual
         
     
@@ -31,8 +31,13 @@ class Cuenta:
         else:
             raise Exception("Estas seco")
     
-    #validacion del dni
-    def validar_dni(self,dni:int)-> int:
+
+
+
+#Validaciones----
+
+ #validacion del dni
+def validar_dni(dni:int)-> int:
         dni_ = 0
         if validar_tipo(dni,int) :
             dni_ = dni
@@ -41,7 +46,7 @@ class Cuenta:
         return dni_
     
      #validacion del saldo
-    def validar_saldo(self,saldo:int) -> float:
+def validar_saldo(saldo:int) -> float:
         saldo_ = 0 # saldo a retornar
         if validar_tipo(saldo,int) and saldo >= 0:
             saldo_ = saldo
@@ -50,7 +55,7 @@ class Cuenta:
         return saldo_
     
      #validacion del numero de cuenta
-    def validar_numero_cuenta(self,numero_de_cuenta)-> int:
+def validar_numero_cuenta(numero_de_cuenta:int)-> int:
         num_c = 0
         if validar_tipo(numero_de_cuenta,int):
             num_c = numero_de_cuenta
@@ -59,7 +64,6 @@ class Cuenta:
 
         return num_c
     
-    def tiempo_a_segundos(self) -> str:
+
         
-        
-   
+    

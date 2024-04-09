@@ -3,19 +3,10 @@ class Propiedad:
         self.__calle = calle
         self.__numero = numero
         self.__localidad = localidad,
-        self.__anio_de_construccion = self.validar_anio(anio_de_construccion)
+        self.__anio_de_construccion = validar_anio(anio_de_construccion)
         self.__cantidad_de_ambientes = cantidad_de_ambientes
     
-    
-    def validar_anio(self,anio_construccion:int)-> int:
-        anio = 0
-        if anio_construccion >= 1870:
-            anio = anio_construccion
-        else :
-            raise Exception("El año de construcción debe ser superior o igual a 1870")
-        
-        return anio
-    
+
     def __repr__(self) -> str:
         return f' Calle : {self.__calle} \n Numero : {self.__numero} \n Localidad : {self.__localidad}'
     
@@ -65,3 +56,14 @@ class Propiedad:
             impuestos = "35%"
     
         return impuestos
+    
+#Validaciones ---
+
+def validar_anio(anio_construccion:int)-> int:
+        anio = 0
+        if anio_construccion >= 1870:
+            anio = anio_construccion
+        else :
+            raise Exception("El año de construcción debe ser superior o igual a 1870")
+        
+        return anio
