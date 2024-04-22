@@ -76,20 +76,20 @@
 # Luego, usando esta función, escriba un programa que pida 10 números al usuario por
 # teclado y al finalizar informe el mayor por pantalla.
 
-def numero_mayor(num_uno:int,num_dos:int)-> int:
-    n = num_uno if num_uno > num_dos else num_dos
-    mayor = 0;
+# def numero_mayor(num_uno:int,num_dos:int)-> int:
+#     n = num_uno if num_uno > num_dos else num_dos
+#     mayor = 0;
     
-    if(n > mayor):
-        mayor = n
+#     if(n > mayor):
+#         mayor = n
     
-    return mayor
+#     return mayor
     
-i = 0
-while(i < 2):
-    n_uno = int(input("Ingresa un numero"))
-    n_dos = int(input("Ingresa otro numero")) 
-    i += 1
+# i = 0
+# while(i < 2):
+#     n_uno = int(input("Ingresa un numero"))
+#     n_dos = int(input("Ingresa otro numero")) 
+#     i += 1
 
 # Ejercicio 9
 # Escribir una función que dado un tiempo en horas, minutos y segundos retorne esa
@@ -132,18 +132,20 @@ while(i < 2):
 # Escribir una función que tome por parámetro un numero entero y retorne la suma de
 # sus dígitos.
 
-# def sumar_digitos(numero:int)-> int:
-#     num_str = str(numero) #convierto el numero a un string para poder recorrerlo
-#     total = 0
+def sumar_digitos(numero:int)-> int:
+    # num_str = (numero) #convierto el numero a un string para poder recorrerlo
+    total = 0
+    
+    while(numero != 0):
+        total += numero % 10
+        numero = numero // 10 #Actualizo el numero
 
-#     for i in range(len(num_str)): # Recorre la cadena por completo
-#          total += int(num_str[i]) #Ir cada indice y lo combierte a un int , lo suma y lo guarda  
-  
-#     return total
 
+    return total
 
-# print(sumar_digitos(505))
-
+    # for i in range(len(num_str)): # Recorre la cadena por completo
+    #      total += int(num_str[i]) #Ir cada indice y lo combierte a un int , lo suma y lo guarda  
+    # return total
 
 # Ejercicio 13
 # Escribir un programa que pida números positivos al usuario. Mostrar el número cuya
@@ -151,8 +153,28 @@ while(i < 2):
 # fue menor que 10. Utilizar una o más funciones, según sea necesario.
 
 
+def obtener_numero_con_sumatoria_mayor(numero:int)-> str:
+    
+    suma_digitos = sumar_digitos(numero)
+    numero_mayor = 0
+    suma_digitos_menor_a_diez = 0
+    
+    if(suma_digitos < 10):
+        suma_digitos_menor_a_diez += 1
+        
+    if(suma_digitos > numero_mayor):
+        numero_mayor = suma_digitos
+ 
+    
+    return f'El numero mayor es : {numero_mayor} y la cantidad de numeros menores a diez es de : {suma_digitos_menor_a_diez}'
 
 
+
+for i in range(1,4):
+    numero = int(input("Ingrese un numero"))    
+
+
+print(obtener_numero_con_sumatoria_mayor(numero))
 
 # Ejercicio 14
 # Escribir un programa que solicita al usuario el ingreso de números primos. La lectura
